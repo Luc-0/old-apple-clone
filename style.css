@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 12px Helvetica, Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+.wrapper,
+main {
+  height: 100%;
+}
+
+img {
+  min-width: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-nav {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  width: 100%;
+  max-width: 980px;
+
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  border-radius: 4px;
+  background: linear-gradient(
+    to bottom,
+    #666,
+    #5e5e5e 50%,
+    #707070 51%,
+    #7a7a7a 100%
+  );
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+}
+
+.main-nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav-list li {
+  flex: 1;
+  display: inline-flex;
+}
+
+.main-nav-list .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.1) 99%,
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+.search {
+  height: 19px;
+  max-width: 105px;
+
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.1),
+      rgba(0, 0, 0, 0) 75%,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0) 85%,
+      rgba(0, 0, 0, 0.7)
+    ),
+    linear-gradient(to top right, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.5)),
+    linear-gradient(to top left, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.5));
+  border-radius: 50px;
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
+  padding: 0 20px;
+  color: #eee;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 5%;
+  top: 60%;
+  transform: translateY(-50%);
+
+  width: 15px;
+  height: 14px;
+  background: url('images/search-icon.svg') center no-repeat;
+}
+
+.main-nav-list li a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(540px, 2fr);
+  grid-auto-rows: auto;
+}
+
+.main-article {
+  position: relative;
+
+  padding-top: 40px;
+  background: url('images/your_verse_hero.jpg') bottom no-repeat;
+}
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+
+  font-family: sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.header h2 {
+  max-width: 700px;
+  margin: 20px auto;
+
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+.side-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 1px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 0.8rem;
+  padding: 20px 10%;
+  color: #6e6e6e;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #08c;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer p {
+  margin-top: 15px;
+}
+
+.icon-usa {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url('images/usa.png');
+}
+
+.icon-apple {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-image: url('images/apple-logo.svg');
+}
+
+.footer-links {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    top: 0;
+    width: 100%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .main-nav-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .main-nav-list .nav-search {
+    grid-column: span 2;
+  }
+
+  .header h2 {
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .side-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+  }
+
+  .footer-links {
+    gap: 5px;
+  }
+}
